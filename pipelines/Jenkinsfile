@@ -2,6 +2,11 @@ pipeline {
     agent {label 'MAIN'}
 
     stages {
+        stage('Sonar') {
+            steps {
+                echo 'Scanning....'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -13,6 +18,11 @@ pipeline {
             }
         }
         stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+        stage('Publish') {
             steps {
                 echo 'Deploying....'
             }
